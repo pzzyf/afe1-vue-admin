@@ -1,12 +1,38 @@
 <template>
-    <div class="p-2">
-        <div class="login">123</div>
+    <div class="login-container">
+        <div class="login">
+            <el-card class="w-100 opacity-80">
+                <h2 class="text-center">afe1-vue-admin</h2>
+                <el-form :model="loginData">
+                    <el-form-item>
+                        <el-input size="large" prefix-icon="search" v-model="loginData.username"></el-input>
+                    </el-form-item>
+                    <el-form-item>
+                        <el-input size="large" prefix-icon="lock" v-model="loginData.password"></el-input>
+                    </el-form-item>
+                </el-form>
+                <el-button type="primary" size="large" class="w-full">登陆</el-button>
+            </el-card>
+        </div>
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+const loginData = ref({
+    username: "admin",
+    password: "123456",
+})
+</script>
 
 <style scoped>
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    background: url('../../../assets/images/iterm.jpeg') no-repeat center;
+    background-size: cover;
+}
+
 .login {
     position: absolute;
     left: 50%;

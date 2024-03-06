@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import { router } from "./routes";
 import { setupStore } from "@/store";
+import { setupElIcons, setupPermission } from "@/plugins";
 import "normalize.css";
 import "uno.css";
 
@@ -11,6 +12,10 @@ import "element-plus/dist/index.css";
 const app = createApp(App);
 
 setupStore(app);
+
+setupElIcons(app);
+
+setupPermission();
 
 app.use(router);
 app.use(ElementPlus);
