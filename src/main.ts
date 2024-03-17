@@ -1,21 +1,21 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import { setupRouter } from "./router";
-import { setupStore } from "@/store";
-import { setupElIcons } from "@/plugins";
-import "normalize.css";
 import "uno.css";
+import "normalize.css";
+import "element-plus/dist/index.css";
+
+import { createApp } from "vue";
+
+import { router, setupRouter } from "./router";
+import { setupRouterGuard } from "./router/guard";
+
+import App from "./App.vue";
 
 import ElementPlus from "element-plus";
-import "element-plus/dist/index.css";
 
 const app = createApp(App);
 
-setupStore(app);
-
-setupElIcons(app);
-
 setupRouter(app);
+
+setupRouterGuard(router);
 
 app.use(ElementPlus);
 
