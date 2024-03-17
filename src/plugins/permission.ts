@@ -1,4 +1,4 @@
-import { router } from "@/routes";
+import { router } from "@/router";
 import NProgress from "@/utils/nprogress";
 
 export function setupPermission() {
@@ -7,6 +7,7 @@ export function setupPermission() {
     const hasToken = localStorage.getItem("token");
     if (!hasToken) {
       next({ path: "/" });
+      NProgress.done();
     }
   });
 }

@@ -1,8 +1,8 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import { router } from "./routes";
+import { setupRouter } from "./router";
 import { setupStore } from "@/store";
-import { setupElIcons, setupPermission } from "@/plugins";
+import { setupElIcons } from "@/plugins";
 import "normalize.css";
 import "uno.css";
 
@@ -15,9 +15,8 @@ setupStore(app);
 
 setupElIcons(app);
 
-setupPermission();
+setupRouter(app);
 
-app.use(router);
 app.use(ElementPlus);
 
 app.mount("#app");
