@@ -1,20 +1,36 @@
 <template>
-    <div class="login-container">
-        <div class="login">
-            <el-card class="w-100 opacity-80">
-                <h2 class="text-center">afe1-vue-admin</h2>
-                <el-form :model="loginData">
-                    <el-form-item>
-                        <el-input size="large" prefix-icon="search" v-model="loginData.username"></el-input>
-                    </el-form-item>
-                    <el-form-item>
-                        <el-input size="large" prefix-icon="lock" v-model="loginData.password"></el-input>
-                    </el-form-item>
-                </el-form>
-                <el-button type="primary" size="large" class="w-full">登陆</el-button>
-            </el-card>
-        </div>
+  <div class="login-container">
+    <div class="login">
+      <el-card class="w-100 opacity-80">
+        <h2 class="text-center">
+          afe1-vue-admin
+        </h2>
+        <el-form :model="loginData">
+          <el-form-item>
+            <el-input
+              v-model="loginData.username"
+              size="large"
+              prefix-icon="search"
+            />
+          </el-form-item>
+          <el-form-item>
+            <el-input
+              v-model="loginData.password"
+              size="large"
+              prefix-icon="lock"
+            />
+          </el-form-item>
+        </el-form>
+        <el-button
+          type="primary"
+          size="large"
+          class="w-full"
+        >
+          登陆
+        </el-button>
+      </el-card>
     </div>
+  </div>
 </template>
 
 <script setup lang="ts">
