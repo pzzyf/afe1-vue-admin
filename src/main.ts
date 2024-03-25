@@ -11,12 +11,15 @@ import App from "./App.vue";
 
 import ElementPlus from "element-plus";
 
-const app = createApp(App);
+async function bootspring() {
+  const app = createApp(App);
+  setupRouter(app);
 
-setupRouter(app);
+  setupRouterGuard(router);
 
-setupRouterGuard(router);
+  app.use(ElementPlus);
 
-app.use(ElementPlus);
+  app.mount("#app");
+}
 
-app.mount("#app");
+bootspring();
