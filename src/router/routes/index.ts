@@ -13,4 +13,10 @@ export const LoginRoute: RouteRecordRaw = {
   component: () => import("@/views/sys/login/Login.vue"),
 };
 
-export const basicRoute = [LoginRoute, RootRoute];
+export const Test: RouteRecordRaw = {
+  path: "/test",
+  name: "Test",
+  component: () => import("@/views/test/count.vue"),
+};
+
+export const basicRoute = [LoginRoute, RootRoute, Test];
